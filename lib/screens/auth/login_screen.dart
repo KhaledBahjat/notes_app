@@ -102,9 +102,20 @@ class LoginScreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () => GoRouter.of(context).pushNamed(AppRouts.register),
-                child: Text(
-                  'Dont have an account',
-                  style: TextStyle(),
+                child: Row(
+                  children: [
+                    Text(
+                      'Don\'t have an account?  ',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
