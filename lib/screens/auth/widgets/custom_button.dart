@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
+  CustomButton({
     super.key,
+    required this.text,
+    this.backgroundColor,
+    required this.onPressed,
   });
+  Color? backgroundColor;
+  String text;
+  void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,12 +19,17 @@ class CustomButton extends StatelessWidget {
       height: 50.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: backgroundColor,
+          shape: RoundedRectangleBorder(
+            side: BorderSide(color: Colors.white),
+            borderRadius: BorderRadius.circular(50),
+          ),
         ),
         onPressed: () {},
         child: Text(
-          'Sign in',
-          style: TextStyle(color: Colors.white, fontSize: 17),
+          text,
+          textAlign: TextAlign.center,
+          style: TextStyle(color: Colors.white, fontSize: 20.sp),
         ),
       ),
     );
