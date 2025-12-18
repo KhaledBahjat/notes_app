@@ -6,20 +6,26 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.hintText,
     this.label,
+    this.suffixIcon,
+    this.obscureText = false,
   });
   Widget? prefixIcon;
   String? hintText;
-  Widget? label;
+  Widget? label,suffixIcon;
+  bool obscureText = false;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
+      
       decoration: InputDecoration(
+        suffixIcon: suffixIcon,
         contentPadding: const EdgeInsets.all(20),
         prefixIcon: prefixIcon,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(50),
           borderSide: BorderSide(
-            color: const Color.fromARGB(255, 146, 145, 145)!,
+            color: const Color.fromARGB(255, 146, 145, 145),
           ),
         ),
         label: label,

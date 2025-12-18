@@ -4,7 +4,7 @@ import 'package:nots_app/screens/auth/widgets/custom_button.dart';
 import 'package:nots_app/screens/auth/widgets/customtextform.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({super.key});
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -12,6 +12,7 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   bool isPasswordVisible = false;
+  bool isConfirmed = false;
 
   @override
   Widget build(BuildContext context) {
@@ -99,14 +100,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   prefixIcon: Icon(Icons.lock),
                   hintText: 'Confirm Password',
                   label: Text('Confirm Password'),
-                  obscureText: !isPasswordVisible,
+                  obscureText: !isConfirmed,
                   suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
-                        isPasswordVisible = !isPasswordVisible;
+                        isConfirmed = !isConfirmed;
                       });
                     },
-                    icon: isPasswordVisible
+                    icon: isConfirmed
                         ? Icon(Icons.visibility)
                         : Icon(Icons.visibility_off),
                   ),

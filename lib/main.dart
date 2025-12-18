@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nots_app/core/routing/router_generator.dart';
+import 'firebase_options.dart';
 
 void main() {
   runApp(const NoteApp());
